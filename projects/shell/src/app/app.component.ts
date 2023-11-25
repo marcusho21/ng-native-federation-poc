@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -7,8 +7,12 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.sass'
+  styleUrl: './app.component.sass',
 })
 export class AppComponent {
   title = 'shell';
+
+  constructor() {
+    globalThis.ngZone = inject(NgZone);
+  }
 }

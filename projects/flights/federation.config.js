@@ -7,7 +7,7 @@ module.exports = withNativeFederation({
   name: "flights",
 
   exposes: {
-    "./Component": "./projects/flights/src/app/app.component.ts",
+    "./flights-app": "./projects/flights/src/bootstrap.ts",
   },
 
   shared: {
